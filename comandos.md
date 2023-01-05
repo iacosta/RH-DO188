@@ -1,13 +1,23 @@
 # Comandos de PODMAN
 
+Comaandos para instalar Podman y Podman-Desktop en MAC 
+<code>
+brew install podman
+brew install podman-desktop
+brew install podman-compose
+</code>
+
 Correr un container
-`$ podman run -it alpine sh`
+
+<code>$ podman run -it alpine sh</code>
 
 Listamos archivos dentro 
+
 <code># ls
 bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var</code>
 
 Instalamos en la versión de Linux Alpine el paquete de Curl
+
 <code># apk add curl
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/community/x86_64/APKINDEX.tar.gz
@@ -23,14 +33,17 @@ OK: 9 MiB in 20 packages </code>
 Ahora podemos construir una imagen para Podman
 
 - Usamos vim para crear la imagen 
+
 <code> vim Containerfile</code>
 
 - Agregamos los comandos a la Imagen
+
 <code> 
 FROM alpine 
 RUN echo "Whatssaaauppp from podman. By Ivan Acosta" </code>
 
 Ejecutamos el comando para construir la imagen apartir del archivo Containerfile
+
 <code> #podman build -t prueba:latest . </code> 
 **Nota:** El . significa que va a ejecutar el archivo Containerfile como imagen
 
@@ -127,3 +140,42 @@ CONTAINER ID  IMAGE                                            COMMAND          
 745deb259a58  localhost/podman-pause:4.3.1-1668178887                                5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  b658a848a20f-infra
 829e6065afac  docker.io/library/wordpress:5.4.2-php7.2-apache  apache2-foregroun...  5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  silly_keller
 2d36758c05fa  docker.io/library/mysql:5.7                      --default-authent...  5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  loving_gauss </code>
+
+Con el siguiente comando podemos ver la cantidad de pods y los containers asociados al mismo
+<code>
+#podman pod ls
+POD ID        NAME            STATUS      CREATED     INFRA ID      # OF CONTAINERS
+b658a848a20f  demo_wordpress  Running     5 days ago  745deb259a58  3
+</code>
+
+Podemos crear un manifiesto de K8S de acuerdo a lo que se esta ejecutando en los PODS de Podman. Con este comado podemos hacerlo
+
+<code>
+#podman generate kube demo_wordpress > wordpress_full.yaml
+</code>
+
+Ahora podemos ver el contenido
+<code># vim wordpress_full.yaml
+</code>
+
+Tambien podemos tomar un manifiesto de K8S y ejecutarlo en Podman, así
+<code># podman play kube pod.yaml
+Pod:
+87f3a70f6b0235f93762d3a60ec364535c2477f5e52805a17fdf811bab761911
+Container:
+0e9ebe1dea18e3c316867a63e5fdc5699ec31823ee12817694a5799a83853505
+</code>
+
+Para verificar que el contenedor esta funcionando correctamente, podemos verificarlo por medio del comando
+<code># curl localhost:8080
+Hello Kubernetes!%
+</code>
+
+## Link de Interes
+[Mapa Mental](https://www.goconqr.com/es/mapamental/31944811/podman)
+[Flash Cards - DO180](https://quizlet.com/692889577/do180-studey-set-flash-cards/)
+[Cards de Comandos - DO180](https://quizlet.com/717521005/do180-commands-flash-cards/)
+[Examen de Practica - DO180](https://acloudguru.com/hands-on-labs/red-hat-ex180-practice-exam)
+[Examen de Ejemplo - DO180](https://ziyonotes.uz/ex180-sample)
+[Repo GIT](https://github.com/kukudm/D0180)
+
