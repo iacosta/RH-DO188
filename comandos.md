@@ -178,4 +178,4 @@ Hello Kubernetes!%
 [Examen de Practica - DO180](https://acloudguru.com/hands-on-labs/red-hat-ex180-practice-exam)\
 [Examen de Ejemplo - DO180](https://ziyonotes.uz/ex180-sample)\
 [Repo GIT](https://github.com/kukudm/D0180)
-
+[El tiempo](https://eltiempo.com)
