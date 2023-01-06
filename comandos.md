@@ -167,15 +167,13 @@ Container:
 </code>
 
 Para verificar que el contenedor esta funcionando correctamente, podemos verificarlo por medio del comando
-<code># curl localhost:8080
-Hello Kubernetes!%
-</code>
+<code> # curl localhost:8080 
+Hello Kubernetes!% </code>
 
-## Link de Interes
+###Links de Interes
 [Mapa Mental](https://www.goconqr.com/es/mapamental/31944811/podman)\
 [Flash Cards - DO180](https://quizlet.com/692889577/do180-studey-set-flash-cards/)\
 [Cards de Comandos - DO180](https://quizlet.com/717521005/do180-commands-flash-cards/)\
 [Examen de Practica - DO180](https://acloudguru.com/hands-on-labs/red-hat-ex180-practice-exam)\
 [Examen de Ejemplo - DO180](https://ziyonotes.uz/ex180-sample)\
 [Repo GIT](https://github.com/kukudm/D0180)
-[El tiempo](https://eltiempo.com)
