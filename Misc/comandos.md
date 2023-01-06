@@ -1,4 +1,4 @@
-# Comandos de PODMAN
+## Comandos de PODMAN
 
 Comandos para instalar Podman y Podman-Desktop en MAC 
 ```bash
@@ -118,7 +118,6 @@ $ podman run -it prueba sh
 $ ls
 bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
 ```
-
 ___
 Ahora vamos a crear un POD con dos imagenes. La primera con una capa de aplicación con WordPress y la segunda con una DB de MySQL asociada. 
 
@@ -229,7 +228,7 @@ $ curl localhost:8080
 Hello Kubernetes!% 
 ```
 
-###Links de Interes
+### Links de Interes
 [Mapa Mental](https://www.goconqr.com/es/mapamental/31944811/podman)\
 [Flash Cards - DO180](https://quizlet.com/692889577/do180-studey-set-flash-cards/)\
 [Cards de Comandos - DO180](https://quizlet.com/717521005/do180-commands-flash-cards/)\

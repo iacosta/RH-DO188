@@ -1,19 +1,19 @@
-### Introducción y descripción general de los contenedores
+## Introducción y descripción general de los contenedores
 
-#### Descripción de Contenedores
+### Descripción de Contenedores
 - Un contenedor es un proceso encapsulado que incluye las dependencias de tiempo de ejecución necesarias para ejecutar el programa.
 
 - Un motor de contenedores crea un sistema de archivos de unión fusionando capas de imágenes de contenedores
 
 - Los contenedores son efímeros de forma predeterminada, lo que significa que el motor de contenedores elimina la capa de escritura cuando se elimina el contenedor.
 
-##### Imágenes contra instancias
+#### Imágenes contra instancias
 - Los contenedores se pueden dividir en dos:
- -- Imagenes de Contenedor : Contiene datos inmutables
- -- Instancias de Contenedor: Puede usarse varias veces para crear muchas instancias de contenedor distintas
+    - Imagenes de Contenedor : Contiene datos inmutables
+    - Instancias de Contenedor: Puede usarse varias veces para crear muchas instancias de contenedor distintas
 Las imágenes de contenedor se pueden usar para crear instancias de contenedor
 
-##### Contenedores Vs Maquinas Virtuales
+#### Contenedores Vs Maquinas Virtuales
 - Los contenedores generalmente cumplen un rol similar a las máquinas virtuales (VM), donde una aplicación reside en un entorno autónomo con redes virtualizadas para la comunicación.
 
 - Una máquina virtual es útil cuando se requiere un entorno de computación completo adicional, como cuando una aplicación requiere hardware específico y dedicado.
@@ -28,11 +28,11 @@ Las imágenes de contenedor se pueden usar para crear instancias de contenedor
 
 - Continuidad: Los contenedores pueden ser de la misma imagen para réplicas de alta disponibilidad (HA) o de varias imágenes diferente
 
-#### Introducción a Kubernetes
+### Introducción a Kubernetes
 - Es un servicio de orquestación que simplifica la implementación, la administración y el escalamiento de las aplicaciones contenerizadas. Gestiona conjuntos (pools) complejos de recursos, como CPU, RAM, almacenamiento y redes.
 - La unidad gestionable más pequeña es un **pod**, que representa una sola aplicación y consta de uno o más contenedores, incluidos los recursos de almacenamiento y una dirección IP.
 
-##### Características
+#### Características
 - Detección de servicios y balanceos de carga
 - Escalamiento horizontal
 - Reparación automatica
@@ -40,7 +40,7 @@ Las imágenes de contenedor se pueden usar para crear instancias de contenedor
 - Administración de Secrets y configuración
 - Operadores
 
-#### Introducción a OpenShift
+### Introducción a OpenShift
 - Es un conjunto de componentes y servicios modulares desarrollados sobre la base de una infraestructura de contenedores de Kubernetes
 - Cuenta con capacidades para una plataforma de producción, como gestión remota, mayor seguridad, monitoreo y auditoría, administración del ciclo de vida de la aplicación e interfaces de autoservicio para desarrolladores
 
@@ -52,7 +52,7 @@ Las imágenes de contenedor se pueden usar para crear instancias de contenedor
 - Metricas y registro
 - Interfaz de usuario unificada
 
-#### Ciclo de vida de aplicaciones en RHOCP
+### Ciclo de vida de aplicaciones en RHOCP
 1. Comienza la definición del pod
 2. Los pods se asignan a un nodo en buen estado.
 3. Los pods se ejecutan hasta que sus contenedores terminan.
@@ -63,6 +63,7 @@ Las imágenes de contenedor se pueden usar para crear instancias de contenedor
 
 <details><summary> Resumen
 </summary>
+
 - Los contenedores se diferencian de las máquinas virtuales al proporcionar solo las dependencias de tiempo de ejecución necesarias, como las librerías específicas de la aplicación necesarias para que se ejecute un programa, en lugar de un sistema operativo completo.<br>
 - Las imágenes de contenedor se pueden usar para crear instancias de contenedor que son versiones ejecutables de la imagen que incluyen referencias a redes, discos y otras necesidades de tiempo de ejecución.<br>
     - Podman es un motor de contenedores para construir y ejecutar contenedores en un host individual.
@@ -73,4 +74,5 @@ Las imágenes de contenedor se pueden usar para crear instancias de contenedor
     - Mayor seguridad <br>
     - Integración continua <br>
     - Desarrollo continuo <br>
+![Arquitectura](https://darumatic.com/media/blog_pics/2020_01/Docker_vs_Podman.png)
 </details>

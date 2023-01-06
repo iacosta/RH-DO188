@@ -1,77 +1,45 @@
-### Conceptos básicos de Podman
+## Conceptos básicos de Podman
 
 - Podman es una herramienta de código abierto que puede usar para gestionar sus contenedores localmente.
 - Puede buscar, ejecutar, compilar o implementar contenedores e imágenes de contenedores OCI (Open Container Initiative).
 - Algunas otras herramientas como Docker usan un demonio para enviar las solicitudes, lo que genera un único punto de falla y seguridad ya que puede requerir privilegios muy elevados
 
-#### Trabajar con Podman
+### Trabajar con Podman
 Ventajas
-- Extracción y visualización de imágenes
+- Extracción y visualización de imágenes 
+- Contenedor e imágenes del contenedor
+    - Una imagen de contenedor contiene una versión empaquetada de su aplicación, con todas las dependencias necesarias para que la aplicación se ejecute.
+- Ejecución y visualización de contenedores
+- Exposición de contenedores (Puertos entre el Host & el contenedor)
+- Uso de variables de entorno 
 
-##### Imágenes contra instancias
-- Los contenedores se pueden dividir en dos:
--- Imagenes de Contenedor : Contiene datos inmutables
--- Instancias de Contenedor: Puede usarse varias veces para crear muchas instancias de contenedor distintas
-Las imágenes de contenedor se pueden usar para crear instancias de contenedor
+### Redes sobre Contenedores
+- Podman viene con una red llamada **podman**
+    - Ejemplo: Los contenedores que ejecutan una aplicación y una DB pueden usar una red Podman separada para aislar su comunicación de otros contenedores. Así mismo la DB puede usar otra red para aislar la comunicación
+- Para usar el DNS, cree una nueva red Podman y conecte sus contenedores a esa red.
+- Los contenedores pueden conectarse a una o más redes Podman.
 
-##### Contenedores Vs Maquinas Virtuales
-- Los contenedores generalmente cumplen un rol similar a las máquinas virtuales (VM), donde una aplicación reside en un entorno autónomo con redes virtualizadas para la comunicación.
+### Acceso a servicios de redes contenerizadas
+- La red de un contenedor está aislada, lo que significa que solo se puede acceder a una aplicación en red dentro del contenedor. El reenvío de puertos asigna un puerto desde el contenedor al host del contenedor externo.
 
-- Una máquina virtual es útil cuando se requiere un entorno de computación completo adicional, como cuando una aplicación requiere hardware específico y dedicado.
 
-- Debido a que un contenedor requiere muchos menos recursos que una máquina virtual, los contenedores tienen beneficios de rendimiento y recursos a mayor escala.
 
-- Implementación a Escala: Un método común en entornos a gran escala es usar contenedores que se ejecutan dentro de las máquinas virtuales. Esta configuración aprovecha los puntos fuertes de cada tecnología.
 
-- Pruebas y flujos de trabajo: Los desarrolladores que usan contenedores pueden aprovechar pipelines (CI/CD) para implementar contenedores en diversos entornos
 
-- Estabilidad: Debido a que las librerías están incluidas en la imagen del contenedor, un desarrollador (developer) puede estar seguro de que no habrá problemas de dependencia en una implementación
 
-- Continuidad: Los contenedores pueden ser de la misma imagen para réplicas de alta disponibilidad (HA) o de varias imágenes diferente
 
-#### Introducción a Kubernetes
-- Es un servicio de orquestación que simplifica la implementación, la administración y el escalamiento de las aplicaciones contenerizadas. Gestiona conjuntos (pools) complejos de recursos, como CPU, RAM, almacenamiento y redes.
-- La unidad gestionable más pequeña es un **pod**, que representa una sola aplicación y consta de uno o más contenedores, incluidos los recursos de almacenamiento y una dirección IP.
-
-##### Características
-- Detección de servicios y balanceos de carga
-- Escalamiento horizontal
-- Reparación automatica
-- Implementación automatizada
-- Administración de Secrets y configuración
-- Operadores
-
-#### Introducción a OpenShift
-- Es un conjunto de componentes y servicios modulares desarrollados sobre la base de una infraestructura de contenedores de Kubernetes
-- Cuenta con capacidades para una plataforma de producción, como gestión remota, mayor seguridad, monitoreo y auditoría, administración del ciclo de vida de la aplicación e interfaces de autoservicio para desarrolladores
-
-##### Características
-- Flujo de trabajo de desarrollador
-- Pipelines (CI/CD)
-- Fuente a imagenes (S2I)
-- Router (Rutas para el exterior - publicas)
-- Metricas y registro
-- Interfaz de usuario unificada
-
-#### Ciclo de vida de aplicaciones en RHOCP
-1. Comienza la definición del pod
-2. Los pods se asignan a un nodo en buen estado.
-3. Los pods se ejecutan hasta que sus contenedores terminan.
-4. Los pods y sus contenedores se eliminan del nodo.
-
-![imagenes/Cap1-imagen1.png](imagenes/Cap1-imagen1.png)
-
+___
 
 <details><summary> Resumen
 </summary>
-- Los contenedores se diferencian de las máquinas virtuales al proporcionar solo las dependencias de tiempo de ejecución necesarias, como las librerías específicas de la aplicación necesarias para que se ejecute un programa, en lugar de un sistema operativo completo.<br>
-- Las imágenes de contenedor se pueden usar para crear instancias de contenedor que son versiones ejecutables de la imagen que incluyen referencias a redes, discos y otras necesidades de tiempo de ejecución.<br>
-- Podman es un motor de contenedores para construir y ejecutar contenedores en un host individual.
-- Kubernetes y Red Hat OpenShift Container Platform (RHOCP) gestionan u orquestan contenedores en varios hosts denominados nodos.<br>
-- RHOCP es un conjunto de componentes y servicios modulares que se crean sobre Kubernetes para agregar capacidades para las siguientes características: <br>
-- Gestión remota <br>
-- Varios inquilinos <br>
-- Mayor seguridad <br>
-- Integración continua <br>
-- Desarrollo continuo <br>
+
+- Use el comando podman run para iniciar el contenedor.<br>
+- Comunicación de un contenedor a otro mediante el uso de redes Podman, que incluyen:<br>
+   - Gestión de redes Podman mediante el uso de subcomandos podman network.<br>
+   - Conectar un contenedor a una red en la creación del contenedor y mientras se ejecuta.<br>
+- Use el reenvío de puertos para exponer un proceso contenerizado al entorno del host.<br>
+- Use los comandos podman stop y podman kill para detener un contenedor.<br>
+- Use el comando podman ps para mostrar una lista de los contenedores.<br>
+- Use el comando podman cp para copiar archivos desde y hacia contenedores.<br>
+- Gestione el ciclo de vida de los contenedores mediante el uso de podman start, podman pause, podman restart y otros comandos de Podman.<br>
 </details>
