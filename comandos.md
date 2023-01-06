@@ -1,24 +1,63 @@
 # Comandos de PODMAN
 
-Comaandos para instalar Podman y Podman-Desktop en MAC 
-<code>
-brew install podman
-brew install podman-desktop
-brew install podman-compose
-</code>
+Comandos para instalar Podman y Podman-Desktop en MAC 
+```bash
+$brew install podman
+$brew install podman-desktop
+$brew install podman-compose
+```
+Una vez instalado, procedemos a crear e inicializar el Podman Machine
+```bash
+$podman machine init
+$podman machine start
+```
+Podemos verificar con
+```bash
+$podman info
+host:
+  arch: amd64
+  buildahVersion: 1.28.0
+  cgroupControllers:
+  - cpu
+  - io
+  - memory
+  - pids
+  cgroupManager: systemd
+  cgroupVersion: v2
+  conmon:
+    package: conmon-2.1.5-1.fc37.x86_64
+    path: /usr/bin/conmon
+    version: 'conmon version 2.1.5, commit: '
+  cpuUtilization:
+    idlePercent: 70.7
+    systemPercent: 19.41
+    userPercent: 9.89
+  cpus: 1
+  distribution:
+    distribution: fedora
+    variant: coreos
+    version: "37"
+    .
+    .
+    .
+```
 
 Correr un container
 
-<code>$ podman run -it alpine sh</code>
-
+```bash
+$ podman run -it alpine sh
+```
 Listamos archivos dentro 
 
-<code># ls
-bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var</code>
+```bash
+$ ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+```
 
 Instalamos en la versión de Linux Alpine el paquete de Curl
 
-<code># apk add curl
+```bash 
+/# apk add curl
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/community/x86_64/APKINDEX.tar.gz
 (1/5) Installing ca-certificates (20220614-r3)
@@ -28,28 +67,34 @@ fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/community/x86_64/APKINDEX.tar.
 (5/5) Installing curl (7.87.0-r0)
 Executing busybox-1.35.0-r29.trigger
 Executing ca-certificates-20220614-r3.trigger
-OK: 9 MiB in 20 packages </code>
+OK: 9 MiB in 20 packages
+```
 
 Ahora podemos construir una imagen para Podman
 
 - Usamos vim para crear la imagen 
 
-<code> vim Containerfile</code>
+```bash
+$ vim Containerfile
+```
 
 - Agregamos los comandos a la Imagen
 
-<code> 
+```bash
 FROM alpine 
-RUN echo "Whatssaaauppp from podman. By Ivan Acosta" </code>
+RUN echo "Whatssaaauppp from podman. By Ivan Acosta"
+```
 
 Ejecutamos el comando para construir la imagen apartir del archivo Containerfile
 
-<code> #podman build -t prueba:latest . </code> 
-**Nota:** El . significa que va a ejecutar el archivo Containerfile como imagen
+```bash
+$podman build -t prueba:latest . 
+```
+**Nota:** El **.** significa que va a ejecutar el archivo Containerfile como imagen
 
 Ahora miremos el resultado
-
-<code># podman build -t prueba:latest .
+```bash
+$ podman build -t prueba:latest .
 STEP 1/2: FROM alpine
 STEP 2/2: RUN echo "Whatssaaauppp from podman. By Ivan Acosta"
 Whatssaaauppp from podman. By Ivan Acosta
@@ -57,29 +102,36 @@ COMMIT prueba:latest
 --> 3583f7a8a75
 Successfully tagged localhost/prueba:latest
 3583f7a8a75229011c35ca6aabc8710b146fa56d26b04fde205a8793edb5552a
-</code>
+```
 
 Miremos ahora el listado de imagenes
-<code>#podman images
+```bash
+$podman images
 REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
 localhost/prueba          latest      3583f7a8a752  5 days ago   7.34 MB
-docker.io/library/alpine  latest      49176f190c7e  6 weeks ago  7.34 MB </code>
+docker.io/library/alpine  latest      49176f190c7e  6 weeks ago  7.34 MB
+```
 
 Ahora podemos entrar a la maquina con
-<code># podman run -it prueba sh
-/ # ls
-bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var </code>
+```bash
+$ podman run -it prueba sh
+$ ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+```
 
 ___
 Ahora vamos a crear un POD con dos imagenes. La primera con una capa de aplicación con WordPress y la segunda con una DB de MySQL asociada. 
 
 Vamos a crear el pod primero Llamado **demo_wordpress**
-<code>#podman pod create --name demo_wordpress -p 8585:80
-b658a848a20f66f45e7fbba86afcd653e4b0867d51adbf0751e7eb1ed79e31b8</code>
+```bash
+$podman pod create --name demo_wordpress -p 8585:80
+b658a848a20f66f45e7fbba86afcd653e4b0867d51adbf0751e7eb1ed79e31b8
+```
 
 Ahora vamos a crear un contenedor de MySQL y lo vamos agregar al pod **demo_wordpress**
 
-<code>#podman run -d --pod demo_wordpress -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=root -e WORDPRESS_DB_NAME=wordpress -e WORDPRESS_DB_HOST=127.0.0.1 wordpress:5.4.2-php7.2-apache 
+```bash
+$ podman run -d --pod demo_wordpress -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=root -e WORDPRESS_DB_NAME=wordpress -e WORDPRESS_DB_HOST=127.0.0.1 wordpress:5.4.2-php7.2-apache 
 Resolving "wordpress" using unqualified-search registries (/etc/containers/registries.conf.d/999-podman-machine.conf)
 Trying to pull docker.io/library/wordpress:5.4.2-php7.2-apache...
 Getting image source signatures
@@ -107,11 +159,12 @@ Copying blob sha256:3db472489ef43c12977b80fbcce7a07df81b1b61737786da7fd5fd518cd8
 Copying config sha256:d3bd49a68bba89420fc1759b197eb2dea9c8afcbb6ea1b6a59daecd1d5a0f972
 Writing manifest to image destination
 Storing signatures
-829e6065afacd35090c27830cd31e8aca42390c4d68d4c64e5e0dba704fe3f2e</code>
-
+829e6065afacd35090c27830cd31e8aca42390c4d68d4c64e5e0dba704fe3f2e
+```
 
 Ahora vamos descargar la imagen de la aplicación que se conectara al contenedor de MySQL que creamos en el paso anterior
-<code>#podman run -d --pod demo_wordpress -e MYSQL_DATABASE=wordpress -e MYSQL_ROOT_PASSWORD=root mysql:5.7 --default-authentication-plugin=mysql_native_password 
+```bash
+podman run -d --pod demo_wordpress -e MYSQL_DATABASE=wordpress -e MYSQL_ROOT_PASSWORD=root mysql:5.7 --default-authentication-plugin=mysql_native_password 
 Resolving "mysql" using unqualified-search registries (/etc/containers/registries.conf.d/999-podman-machine.conf)
 Trying to pull docker.io/library/mysql:5.7...
 Getting image source signatures
@@ -129,46 +182,52 @@ Copying blob sha256:701dea355691c2e0ccc548aa219fc1dd83ba44ff81843802aef25e77e813
 Copying config sha256:d410f4167eea912908b2f9bcc24eff870cb3c131dfb755088b79a4188bfeb40f
 Writing manifest to image destination
 Storing signatures
-2d36758c05fa611709ce263ac2fc8ae58596061f8dc2074cab58c854c06b9056</code>
+2d36758c05fa611709ce263ac2fc8ae58596061f8dc2074cab58c854c06b9056
+```
 
 Ahora para verificar, podemos abrir un navegador en nuestro HOST LOCAL e ingresar al localhost:8585 y ya tenemos acceso a la instalación de Wordpress. 
 
 Tambien podemos vericar los procesos de podman con el siguiente comando
-<code> #podman ps
+```bash
+$ podman ps
 CONTAINER ID  IMAGE                                            COMMAND               CREATED     STATUS         PORTS                 NAMES
 34dafc1caf1b  docker.io/library/alpine:latest                  sh                    7 days ago  Up 7 days ago                        sweet_meitner
 745deb259a58  localhost/podman-pause:4.3.1-1668178887                                5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  b658a848a20f-infra
 829e6065afac  docker.io/library/wordpress:5.4.2-php7.2-apache  apache2-foregroun...  5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  silly_keller
-2d36758c05fa  docker.io/library/mysql:5.7                      --default-authent...  5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  loving_gauss </code>
+2d36758c05fa  docker.io/library/mysql:5.7                      --default-authent...  5 days ago  Up 5 days ago  0.0.0.0:8585->80/tcp  loving_gauss
+```
 
 Con el siguiente comando podemos ver la cantidad de pods y los containers asociados al mismo
-<code>
-#podman pod ls
+```bash
+$ podman pod ls
 POD ID        NAME            STATUS      CREATED     INFRA ID      # OF CONTAINERS
 b658a848a20f  demo_wordpress  Running     5 days ago  745deb259a58  3
-</code>
-
+```
 Podemos crear un manifiesto de K8S de acuerdo a lo que se esta ejecutando en los PODS de Podman. Con este comado podemos hacerlo
 
-<code>
-#podman generate kube demo_wordpress > wordpress_full.yaml
-</code>
+```bash
+$podman generate kube demo_wordpress > wordpress_full.yaml
+```
 
 Ahora podemos ver el contenido
-<code># vim wordpress_full.yaml
-</code>
+```bash
+$ vim wordpress_full.yaml
+```
 
 Tambien podemos tomar un manifiesto de K8S y ejecutarlo en Podman, así
-<code># podman play kube pod.yaml
+```bash
+podman play kube pod.yaml
 Pod:
 87f3a70f6b0235f93762d3a60ec364535c2477f5e52805a17fdf811bab761911
 Container:
 0e9ebe1dea18e3c316867a63e5fdc5699ec31823ee12817694a5799a83853505
-</code>
+```
 
 Para verificar que el contenedor esta funcionando correctamente, podemos verificarlo por medio del comando
-<code> # curl localhost:8080 
-Hello Kubernetes!% </code>
+```bash
+$ curl localhost:8080 
+Hello Kubernetes!% 
+```
 
 ###Links de Interes
 [Mapa Mental](https://www.goconqr.com/es/mapamental/31944811/podman)\
@@ -176,4 +235,5 @@ Hello Kubernetes!% </code>
 [Cards de Comandos - DO180](https://quizlet.com/717521005/do180-commands-flash-cards/)\
 [Examen de Practica - DO180](https://acloudguru.com/hands-on-labs/red-hat-ex180-practice-exam)\
 [Examen de Ejemplo - DO180](https://ziyonotes.uz/ex180-sample)\
-[Repo GIT](https://github.com/kukudm/D0180)
+[Repo GIT](https://github.com/kukudm/D0180)\
+[Podman In Action - PDF](https://developers.redhat.com/e-books/podman-action)
