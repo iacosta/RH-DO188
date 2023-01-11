@@ -8,7 +8,7 @@ Una vez realizado el ejercicio, no borres el contenedor. Seguramente lo vas a te
 
 ##### El reto 
 
-1. Creación de una imagen Ubuntu
+1. Descarga una imagen Ubuntu de Docker.io
 2. Renonmbra el TAG de esta imagen con el nombre de appserver:ver1.0
 3. Arranca un contenedor desde una imagen base appserver, y define el nombre Working a este contenedor
 4. Instala los paquetes nmap y apache.
