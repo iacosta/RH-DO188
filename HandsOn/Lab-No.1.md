@@ -17,6 +17,7 @@ Una vez realizado el ejercicio, no borres el contenedor. Seguramente lo vas a te
 echo "<h1> My firts Podman Challenge - Checked </h1>" > /var/www/html/index2.html
 ```
 6. Crea una imagen a partir de este contenedor (recuerda que tienes que utilizar el nombre de tu usuario Quay Hub). La imagen se debe llamar <tu_usuario_quay.io>/appserver1.0. Sube la imagen a Quay.
+7. Para saber que terminaste la prueba, menciona en el Chat la cantidad de vulnerabilidades detectadas para esta imagen que subiste a https://quay.io/.
 
 Descarga la imagen y verifica que funciona correctamente. Si consideras necesario y quieres documentar puedes capturar los ScreenShots del proceso.
 
