@@ -15,9 +15,9 @@ Conceptos claves a tener en cuenta. Container File, Datos Persistentes y manejo 
 
 3. Verificar el estado del Container por medio de los logs generados al momento de crear el contenedor
 
-4. Descarga los archivos sakila-data.sql y sakila-schema.sql
+4. Descarga los archivos [sakila-data.sql](https://github.com/iacosta/RH-DO188/blob/main/HandsOn/2-sakila-data.sql) y [sakila-schema.sql](https://github.com/iacosta/RH-DO188/blob/main/HandsOn/1-sakila-schema.sql)
 
-5. Entrar al contenedor usamos un modo interactivo. Allí debes crear una base de datos llamada sakila y subir (importar) los archivos sakila-data.sql y sakila-schema.sql
+5. Entrar al contenedor usamos un modo interactivo. Allí debes crear una base de datos llamada sakila y subir (importar) los archivos [sakila-data.sql](https://github.com/iacosta/RH-DO188/blob/main/HandsOn/2-sakila-data.sql) y [sakila-schema.sql](https://github.com/iacosta/RH-DO188/blob/main/HandsOn/1-sakila-schema.sql)
 
 6. Verificar el estado de la base de datos sakila.
 
