@@ -1,0 +1,27 @@
+# Uso de esta imagen
+FROM registry.access.redhat.com/ubi8:latest
+
+#Instalar paquetes 
+RUN yum install -y java-1.8.0-openjdk-devel unzip wget 
+
+# Crear grupo y usuario jboss con HOME en /opt/jboss, permisos de escritura
+RUN groupadd -g 1100 jboss && useradd -u 1100 jboss -g 1100 -d /opt/jboss && chown -R jboss:jboss /opt/jboss 
+
+# Definir variable de ambiente 
+ENV JBOSS_HOME="/opt/jboss/jboss-eap-7.4"
+
+# Directorio de Trabajo
+WORKDIR /opt/jboss
+
+# Mover .zip y descomprimir y permisos de JBOSS users sobre el forder
+ADD ./jboss-eap-7.4.0.zip /opt/jboss
+RUN unzip /opt/jboss/jboss-eap-7.4.0.zip && chown -R jboss:jboss /opt/jboss
+
+# Traabajar con el usuario
+USER jboss
+
+# Exponer el puerto 8080 para el AppServer JBOSS
+EXPOSE 8080
+
+# Subir Servicios de Jboss
+ENTRYPOINT ["/opt/jboss/jboss-eap-7.4/bin/standalone.sh", "-b", "0.0.0.0", "-c", "standalone-full-ha.xml"]
