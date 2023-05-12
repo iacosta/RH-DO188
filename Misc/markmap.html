@@ -1,25 +1,342 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Markmap</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-#mindmap {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/style.css">
-</head>
-<body>
-<svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.4"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/index.umd.min.js"></script><script>(()=>{setTimeout(()=>{const{markmap:Fe,mm:ur}=window,Fr=new Fe.Toolbar;Fr.attach(ur);const Dr=Fr.render();Dr.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(Dr)})})()</script><script>((B,S,M,_)=>{const I=B();window.mm=I.Markmap.create("svg#mindmap",(S||I.deriveOptions)(_),M)})(()=>window.markmap,null,{"type":"heading","depth":0,"payload":{"lines":[1,2]},"content":"Comandos Podman","children":[{"type":"heading","depth":1,"payload":{"lines":[3,4]},"content":"Comandos de gestión de imágenes","children":[{"type":"list_item","depth":2,"payload":{"lines":[5,6]},"content":"<code>podman build</code> - Construir una imagen desde un Dockerfile o un contexto de construcción."},{"type":"list_item","depth":2,"payload":{"lines":[6,7]},"content":"<code>podman commit</code> - Crear una nueva imagen a partir de un contenedor existente."},{"type":"list_item","depth":2,"payload":{"lines":[7,8]},"content":"<code>podman history</code> - Mostrar la historia de una imagen."},{"type":"list_item","depth":2,"payload":{"lines":[8,9]},"content":"<code>podman images</code> - Listar imágenes descargadas."},{"type":"list_item","depth":2,"payload":{"lines":[9,10]},"content":"<code>podman import</code> - Importar un archivo de imagen desde un archivo .tar."},{"type":"list_item","depth":2,"payload":{"lines":[10,11]},"content":"<code>podman load</code> - Cargar una imagen de archivo o archivo de imagen comprimido."},{"type":"list_item","depth":2,"payload":{"lines":[11,12]},"content":"<code>podman login</code> - Iniciar sesión en un registro de imágenes."},{"type":"list_item","depth":2,"payload":{"lines":[12,13]},"content":"<code>podman logout</code> - Cerrar sesión en un registro de imágenes."},{"type":"list_item","depth":2,"payload":{"lines":[13,14]},"content":"<code>podman pull</code> - Descargar una imagen."},{"type":"list_item","depth":2,"payload":{"lines":[14,15]},"content":"<code>podman push</code> - Subir una imagen a un registro de imágenes."},{"type":"list_item","depth":2,"payload":{"lines":[15,16]},"content":"<code>podman rmi</code> - Eliminar una imagen."},{"type":"list_item","depth":2,"payload":{"lines":[16,17]},"content":"<code>podman save</code> - Guardar una imagen como un archivo .tar."},{"type":"list_item","depth":2,"payload":{"lines":[17,18]},"content":"<code>podman search</code> - Buscar imágenes en un registro de imágenes."},{"type":"list_item","depth":2,"payload":{"lines":[18,19]},"content":"<code>podman tag</code> - Etiquetar una imagen en un registro de imágenes."}]},{"type":"heading","depth":1,"payload":{"lines":[20,21]},"content":"Comandos para crear imágenes personalizadas","children":[{"type":"list_item","depth":2,"payload":{"lines":[22,23]},"content":"<code>FROM</code> - Indicar la imagen base para la nueva imagen personalizada."},{"type":"list_item","depth":2,"payload":{"lines":[23,24]},"content":"<code>MAINTAINER</code> - Especificar el autor y la información de contacto."},{"type":"list_item","depth":2,"payload":{"lines":[24,25]},"content":"<code>RUN</code> - Ejecutar un comando en la nueva imagen personalizada."},{"type":"list_item","depth":2,"payload":{"lines":[25,26]},"content":"<code>CMD</code> - Establecer el comando predeterminado que se ejecutará cuando se inicie un contenedor a partir de la imagen personalizada."},{"type":"list_item","depth":2,"payload":{"lines":[26,27]},"content":"<code>EXPOSE</code> - Especificar el puerto en el que escucha la aplicación dentro del contenedor."},{"type":"list_item","depth":2,"payload":{"lines":[27,28]},"content":"<code>ENV</code> - Definir una variable de entorno dentro del contenedor."},{"type":"list_item","depth":2,"payload":{"lines":[28,29]},"content":"<code>ADD</code> - Copiar un archivo o un directorio desde la máquina host al contenedor."},{"type":"list_item","depth":2,"payload":{"lines":[29,30]},"content":"<code>COPY</code> - Copiar un archivo o un directorio desde la máquina host al contenedor."},{"type":"list_item","depth":2,"payload":{"lines":[30,31]},"content":"<code>ENTRYPOINT</code> - Especificar el comando y los argumentos que se ejecutarán cuando se inicie un contenedor a partir de la imagen personalizada."},{"type":"list_item","depth":2,"payload":{"lines":[31,32]},"content":"<code>LABEL</code> - Agregar metadatos a la imagen."},{"type":"list_item","depth":2,"payload":{"lines":[32,33]},"content":"<code>USER</code> - Especificar el usuario que se utilizará para ejecutar los comandos dentro del contenedor."},{"type":"list_item","depth":2,"payload":{"lines":[33,34]},"content":"<code>VOLUME</code> - Crear un punto de montaje para almacenar datos persistentes."},{"type":"list_item","depth":2,"payload":{"lines":[34,35]},"content":"<code>ARG</code> - Definir argumentos para el Containerfile."},{"type":"list_item","depth":2,"payload":{"lines":[35,36]},"content":"<code>ONBUILD</code> - Agregar una instrucción que se ejecutará cuando se use esta imagen personalizada como base para otra imagen personalizada."},{"type":"list_item","depth":2,"payload":{"lines":[36,37]},"content":"<code>SHELL</code> - Especificar el intérprete de comandos que se utilizará para ejecutar los comandos en el Containerfile."}]}]},{"color":["#2980b9"],"maxWidth":300,"initialExpandLevel":1})</script>
-</body>
-</html>
+---
+markmap:
+  maxWidth: 300
+  embedAssets: true
+  initialExpandLevel: 1
+---
+
+# Comandos Podman
+
+## Capitulo 1 - Introducción
+
+### Definición
+- **Qué es Podman:** Es una herramienta de gestión de contenedores para sistemas Linux que permite crear, ejecutar y administrar contenedores sin necesidad de un daemon de fondo.
+- **Qué son los contenedores:** Los contenedores son una forma de virtualización ligera que permite a las aplicaciones ejecutarse en un entorno aislado, sin afectar al sistema anfitrión.
+- **Ventajas de los contenedores:** Los contenedores son portátiles, escalables y fáciles de mantener, lo que los hace ideales para la implementación de aplicaciones en producción.
+- **Cómo funciona Podman:** Podman utiliza las características de espacio de nombres, cgroups y selinux de Linux para crear un entorno aislado para cada contenedor. Cada contenedor tiene su propio sistema de archivos, red y recursos asignados.
+- **Imágenes de contenedor:** Las imágenes de contenedor son plantillas de solo lectura que se utilizan para crear contenedores. Las imágenes de contenedor se almacenan en un registro de imágenes y se pueden compartir y descargar fácilmente.
+- **Gestión de contenedores con Podman:** Podman permite crear, ejecutar, parar, reiniciar, eliminar y gestionar contenedores. Además, permite trabajar con redes, volúmenes y otras características avanzadas.
+
+### Kubernetes y RHOCP
+- **Qué es Kubernetes:** Es un sistema de orquestación de contenedores de código abierto que automatiza la implementación, escalado y administración de aplicaciones en contenedores.
+- **Arquitectura de Kubernetes:** Kubernetes utiliza una arquitectura de cliente-servidor para gestionar los clústeres de contenedores. Los componentes principales son el nodo, el maestro y la API.
+- **Objetos de Kubernetes:** Kubernetes utiliza objetos para representar el estado de la aplicación y el clúster. Los objetos más comunes son los pods, los servicios, los deployments y los ingress.
+- **Qué es OpenShift:** Es una plataforma de contenedores de código abierto basada en Kubernetes que simplifica la implementación y administración de aplicaciones en contenedores. OpenShift agrega una capa de funcionalidad adicional para mejorar la experiencia del desarrollador.
+- **Funcionalidades de OpenShift:** OpenShift ofrece una gama de funcionalidades adicionales, como la construcción de imágenes de contenedor integrada, la gestión de proyectos y usuarios, la integración de CI/CD y la administración de redes.
+
+
+## Capitulo 2 - Conceptos Podman
+
+### Contenedores en Podman
+
+- **Qué es Podman:** Es una herramienta de gestión de contenedores para sistemas Linux que permite crear, ejecutar y administrar contenedores sin necesidad de un daemon de fondo.
+- **Qué son los contenedores:** Los contenedores son una forma de virtualización ligera que permite a las aplicaciones ejecutarse en un entorno aislado, sin afectar al sistema anfitrión.
+- **Ventajas de los contenedores:** Los contenedores son portátiles, escalables y fáciles de mantener, lo que los hace ideales para la implementación de aplicaciones en producción.
+- **Cómo funciona Podman:** Podman utiliza las características de espacio de nombres, cgroups y selinux de Linux para crear un entorno aislado para cada contenedor. Cada contenedor tiene su propio sistema de archivos, red y recursos asignados.
+- **Imágenes de contenedor:** Las imágenes de contenedor son plantillas de solo lectura que se utilizan para crear contenedores. Las imágenes de contenedor se almacenan en un registro de imágenes y se pueden compartir y descargar fácilmente.
+- **Gestión de contenedores con Podman:** Podman permite crear, ejecutar, parar, reiniciar, eliminar y gestionar contenedores. Además, permite trabajar con redes, volúmenes y otras características avanzadas.
+
+### Conceptos Basicos Netwotking
+
+- **Qué es una red de contenedores:** Es una red virtual que permite que los contenedores se comuniquen entre sí y con el mundo exterior. Las redes de contenedores pueden ser internas o externas.
+- **Tipos de redes de contenedores:** Podman admite tres tipos de redes de contenedores: la red predeterminada, las redes personalizadas y la red host.
+    - **Red predeterminada:** Es la red predeterminada que se crea automáticamente cuando se instala Podman. Esta red permite que los contenedores se comuniquen entre sí a través de una red virtual.
+    - **Redes personalizadas:** Son redes creadas por el usuario que permiten la comunicación entre contenedores y con el mundo exterior. Las redes personalizadas se pueden configurar con diferentes opciones de red, como el puenteo de la red y la asignación de direcciones IP.
+    - **Red host:** Utiliza la pila de red del host en lugar de una red virtual. Los contenedores que utilizan esta red comparten la dirección IP y el espacio de red del host.
+
+### Comandos de Networking
+- **`podman network create`:** crea una nueva red de contenedores personalizada.
+- **`podman network ls`:** lista todas las redes de contenedores disponibles.
+- **`podman network rm`:** elimina una red de contenedores existente.
+- **`podman network inspect`:** muestra información detallada sobre una red de contenedores.
+- **`podman network connect`:** conecta un contenedor a una red de contenedores existente.
+- **`podman network disconnect`:** desconecta un contenedor de una red de contenedores.
+- **`podman port`:** muestra los puertos abiertos en un contenedor y su correspondencia con los puertos del host.
+- **`podman run --network=host`:** inicia un contenedor en la red del host, lo que permite el acceso directo a los recursos de la red del host.
+- **`podman run -p` y `podman run --expose`:** configura la asignación de puertos para permitir la comunicación externa con el contenedor.
+- **`podman run --ip`:** permite la asignación de una dirección IP específica a un contenedor.
+
+
+### Capas de contenedores
+
+- **Capa de imagen base**: La primera capa de un contenedor es la imagen base, que incluye el sistema operativo y los archivos necesarios para su funcionamiento.
+- **Capa de imagen de la aplicación**: Después de la capa base, se añade la capa de la aplicación que contiene los archivos específicos de la aplicación.
+- **Capa de contenedor de escritura**: Esta es la capa de escritura en la que se realizan todas las modificaciones del contenedor. Es una capa de sistema de archivos "de escritura", lo que significa que cualquier modificación que se realice en el contenedor se almacena aquí.
+- **Capa de contenedor de lectura**: Esta es la capa de sistema de archivos "de lectura" que contiene la imagen de la aplicación y la imagen base. Se utiliza para leer los archivos necesarios para la ejecución del contenedor.
+- **Capa de intercambio de almacenamiento**: Esta capa se utiliza para el almacenamiento temporal de archivos cuando se realizan operaciones de copia entre capas.
+- **Capa de caché de almacenamiento**: Esta capa se utiliza para almacenar en caché las capas anteriores del contenedor y evitar que se vuelvan a descargar si se realizan cambios en el contenedor.
+- **Capa de almacenamiento de dispositivo de almacenamiento**: Esta capa se utiliza para almacenar datos persistentes y configuraciones del contenedor, como volúmenes, bases de datos y archivos de configuración.
+
+### Comandos para iniciar procesos 
+
+- **podman run**: Ejecuta un nuevo contenedor con los parámetros especificados.
+- **podman start**: Inicia un contenedor que se ha creado previamente y que se encuentra en estado detenido.
+- **podman stop**: Detiene un contenedor que se está ejecutando actualmente.
+- **podman restart**: Detiene y vuelve a iniciar un contenedor.
+- **podman pause**: Pausa un contenedor que se está ejecutando actualmente.
+- **podman unpause**: Reanuda un contenedor que se ha pausado previamente.
+- **podman wait**: Espera a que se detenga un contenedor y devuelve su código de salida.
+- **podman exec**: Ejecuta un comando en un contenedor en ejecución.
+- **podman attach**: Conecta la entrada/salida estándar a un contenedor en ejecución.
+- **podman ps**: Muestra información sobre los contenedores en ejecución.
+
+### Ciclo de Vida 
+
+#### Creación
+
+- **podman create**: Crea un contenedor a partir de una imagen.
+- **podman build**: Crea una imagen a partir de un Dockerfile o un Containerfile.
+
+#### Inicio/Ejecución
+
+- **podman run**: Crea y ejecuta un contenedor.
+- **podman start**: Inicia un contenedor que se encuentra en estado detenido.
+
+#### Detención
+
+- **podman stop**: Detiene un contenedor que se está ejecutando actualmente.
+- **podman kill**: Detiene de manera forzada un contenedor.
+- **podman rm**: Elimina un contenedor que se ha detenido previamente.
+
+#### Administración
+
+- **podman pause**: Pausa un contenedor que se está ejecutando actualmente.
+- **podman unpause**: Reanuda un contenedor que se ha pausado previamente.
+- **podman restart**: Detiene y vuelve a iniciar un contenedor.
+
+#### Estado
+
+- **podman ps**: Muestra información sobre los contenedores en ejecución.
+- **podman inspect**: Obtiene información detallada sobre un contenedor o una imagen.
+- **podman logs**: Muestra los registros de un contenedor.
+
+#### Actualización
+
+- **podman commit**: Crea una nueva imagen a partir de un contenedor modificado.
+- **podman update**: Actualiza la configuración de un contenedor en ejecución.
+
+#### Compartición
+
+- **podman push**: Envía una imagen a un registro de imágenes.
+- **podman pull**: Descarga una imagen de un registro de imágenes.
+
+
+## Capitulo 3 - Imagenes
+
+### Comandos Básicos
+- **podman search** : Busca imágenes en el registro de imágenes.
+- **podman pull** : Descarga una imagen de un registro de imágenes.
+- **podman images** : Lista las imágenes disponibles localmente.
+- **podman rmi** : Elimina una o varias imágenes.
+- **podman tag** : Crea una etiqueta para una imagen.
+- **podman push** : Envía una imagen a un registro de imágenes.
+
+### Creación de Imágenes
+- **podman build** : Crea una imagen a partir de un Dockerfile.
+- **podman commit** : Crea una imagen a partir de un contenedor en ejecución.
+
+### Inspección de Imágenes
+- **podman inspect image** : Muestra información detallada sobre una imagen.
+- **podman history** : Muestra el historial de una imagen.
+- **podman diff** : Muestra los cambios realizados en una imagen.
+
+### Comandos Avanzados
+- **podman save** : Guarda una imagen en un archivo.
+- **podman load** : Carga una imagen desde un archivo.
+- **podman export** : Guarda un contenedor como una imagen.
+- **podman import** : Carga una imagen en el registro de imágenes local.
+- **podman sign** : Firma una imagen.
+- **podman verify** : Verifica la firma de una imagen.
+- **podman manifest** : Administra las imágenes en un manifest.
+- **podman manifest create** : Crea un manifest para una imagen.
+- **podman manifest add** : Agrega una imagen a un manifest.
+- **podman manifest push** : Envía un manifest a un registro de imágenes.
+- **podman manifest inspect** : Muestra información detallada sobre un manifest.
+- **podman manifest rm** : Elimina un manifest.
+
+### Gestión de Registros
+- **podman login** : Inicia sesión en un registro de imágenes.
+- **podman logout** : Cierra la sesión en un registro de imágenes.
+- **podman search** : Busca imágenes en un registro de imágenes.
+- **podman pull** : Descarga una imagen de un registro de imágenes.
+- **podman push** : Envía una imagen a un registro de imágenes.
+- **podman tag** : Crea una etiqueta para una imagen.
+- **podman manifest** : Administra las imágenes en un manifest.
+- **podman manifest create** : Crea un manifest para una imagen.
+- **podman manifest add** : Agrega una imagen a un manifest.
+- **podman manifest push** : Envía un manifest a un registro de imágenes.
+- **podman manifest inspect** : Muestra información detallada sobre un manifest.
+- **podman manifest rm** : Elimina un manifest.
+
+### Almacenamiento de Imágenes
+- **podman image prune** : Elimina imágenes no utilizadas.
+- **podman system prune** : Elimina todos los recursos de Podman no utilizados.
+- **podman volume prune** : Elimina volúmenes no utilizados.
+- **podman container prune** : Elimina contenedores no utilizados.
+- **podman pod prune** : Elimina pods no utilizados.
+
+### Comandos
+
+- `podman build` - Construir una imagen desde un Dockerfile o un contexto de construcción.
+- `podman commit` - Crear una nueva imagen a partir de un contenedor existente.
+- `podman history` - Mostrar la historia de una imagen.
+- `podman images` - Listar imágenes descargadas.
+- `podman import` - Importar un archivo de imagen desde un archivo .tar.
+- `podman load` - Cargar una imagen de archivo o archivo de imagen comprimido.
+- `podman login` - Iniciar sesión en un registro de imágenes.
+- `podman logout` - Cerrar sesión en un registro de imágenes.
+- `podman pull` - Descargar una imagen.
+- `podman push` - Subir una imagen a un registro de imágenes.
+- `podman rmi` - Eliminar una imagen.
+- `podman save` - Guardar una imagen como un archivo .tar.
+- `podman search` - Buscar imágenes en un registro de imágenes.
+- `podman tag` - Etiquetar una imagen en un registro de imágenes.
+
+## Capitulo 4 - Imagenes Personalizadas
+
+### Estructura de Imagenes personalizadas 
+
+- `FROM` - Indicar la imagen base para la nueva imagen personalizada.
+- `MAINTAINER` - Especificar el autor y la información de contacto.
+- `RUN` - Ejecutar un comando en la nueva imagen personalizada.
+- `CMD` - Establecer el comando predeterminado que se ejecutará cuando se inicie un contenedor a partir de la imagen personalizada.
+- `EXPOSE` - Especificar el puerto en el que escucha la aplicación dentro del contenedor.
+- `ENV` - Definir una variable de entorno dentro del contenedor.
+- `ADD` - Copiar un archivo o un directorio desde la máquina host al contenedor.
+- `COPY` - Copiar un archivo o un directorio desde la máquina host al contenedor.
+- `ENTRYPOINT` - Especificar el comando y los argumentos que se ejecutarán cuando se inicie un contenedor a partir de la imagen personalizada.
+- `LABEL` - Agregar metadatos a la imagen.
+- `USER` - Especificar el usuario que se utilizará para ejecutar los comandos dentro del contenedor.
+- `VOLUME` - Crear un punto de montaje para almacenar datos persistentes.
+- `ARG` - Definir argumentos para el Containerfile.
+- `ONBUILD` - Agregar una instrucción que se ejecutará cuando se use esta imagen personalizada como base para otra imagen personalizada.
+- `SHELL` - Especificar el intérprete de comandos que se utilizará para ejecutar los comandos en el Containerfile.
+
+### Podman Rootless
+- Podman rootless permite a los usuarios ejecutar contenedores como usuarios no privilegiados.
+- Esto aumenta la seguridad al reducir la exposición a posibles vulnerabilidades del kernel.
+- El modo rootless también permite a los usuarios ejecutar contenedores sin necesidad de privilegios de root en el host.
+- Para ejecutar Podman rootless, se requiere un usuario no privilegiado y ciertos permisos en el sistema.
+- Las imágenes deben estar disponibles para el usuario no privilegiado y en una ubicación accesible.
+- Para habilitar el modo rootless, se debe configurar Podman para utilizar un directorio específico para almacenar datos de contenedores, imágenes y volúmenes.
+- Algunos comandos y opciones pueden requerir permisos de root, incluso en el modo rootless.
+
+## Capitulo 5 - Persistencia
+
+### Definicion
+- Montaje de Volumenes
+  - Volumenes de host
+  - Volumenes de Contenedor
+  - Volumenes tmpfs
+- Montaje de Volumenes con opciones avanzadas
+  - Modo lectura-escritura
+  - Propagación de permisos
+  - Punto de montaje personalizado
+  - Montaje de múltiples volumenes
+
+
+### Comandos
+
+- `podman volume create` - Crear un nuevo volumen persistente.
+- `podman volume ls` - Listar todos los volúmenes persistentes.
+- `podman volume inspect` - Obtener información detallada sobre un volumen persistente específico.
+- `podman volume rm` - Eliminar un volumen persistente específico.
+- `podman run --volume` - Crear un contenedor y montar un volumen persistente en un directorio del contenedor.
+- `podman run --mount` - Crear un contenedor y montar un volumen persistente en un directorio del contenedor utilizando la sintaxis de montaje de Docker.
+- `podman run --name --volumes-from` - Crear un contenedor y utilizar los volúmenes persistentes de otro contenedor.
+- `podman volume prune` - Eliminar todos los volúmenes persistentes que no están siendo utilizados por ningún contenedor.
+
+## Capitulo 6 - Troubleshooting
+
+### Comandos 
+
+- `podman logs [opciones] [ID o nombre]` - Ver los logs de un contenedor en ejecución.
+- `podman events [opciones]` - Ver los eventos del sistema relacionados con los contenedores y las imágenes.
+- `podman inspect [opciones] [ID o nombre]` - Ver información detallada de un contenedor, imagen o volumen.
+- `podman top [opciones] [ID o nombre]` - Ver los procesos en ejecución dentro de un contenedor.
+- `podman stats [opciones] [ID o nombre]` - Ver estadísticas en tiempo real de un contenedor en ejecución.
+- `podman diff [opciones] [ID o nombre]` - Mostrar los cambios en el sistema de archivos dentro de un contenedor en ejecución.
+- `podman port [opciones] [ID o nombre]` - Ver el mapeo de puertos de un contenedor en ejecución.
+- `podman healthcheck [opciones] [ID o nombre]` - Ver el resultado de un comando de comprobación de salud definido en un contenedor.
+
+## Capitulo 7 - Aplicaciones en Compose
+
+### Definición
+
+#### Compose en Podman
+- Permite definir y ejecutar aplicaciones multi-contenedor 
+- Usa un archivo YAML para definir la configuración de los contenedores
+- Facilita la configuración de redes, volúmenes y puertos
+- Permite crear y ejecutar múltiples contenedores de manera conjunta
+
+#### Archivo YAML
+- Se utiliza para definir la configuración de los contenedores
+- Permite definir los servicios y sus dependencias
+- Se puede especificar la imagen, volúmenes, puertos y redes para cada servicio
+
+#### Beneficios de usar Compose en Podman
+- Permite una fácil gestión de múltiples contenedores
+- Reduce la complejidad de la configuración de redes y volúmenes
+- Permite crear y compartir aplicaciones multi-contenedor de manera sencilla
+
+### Compose en Podman
+
+- `podman-compose build` - Construir o reconstruir servicios definidos en un archivo Compose.
+- `podman-compose up` - Crear y arrancar contenedores para todos los servicios definidos en un archivo Compose.
+- `podman-compose down` - Detener y eliminar contenedores, redes y volúmenes creados por `up`.
+- `podman-compose start` - Iniciar servicios definidos en un archivo Compose.
+- `podman-compose stop` - Detener servicios definidos en un archivo Compose.
+- `podman-compose restart` - Reiniciar servicios definidos en un archivo Compose.
+- `podman-compose logs` - Ver los logs de los servicios definidos en un archivo Compose.
+- `podman-compose ps` - Listar los contenedores de los servicios definidos en un archivo Compose.
+- `podman-compose config` - Validar y ver la configuración de un archivo Compose.
+- `podman-compose pull` - Descargar imágenes de los servicios definidos en un archivo Compose.
+- `podman-compose push` - Publicar imágenes de los servicios definidos en un archivo Compose en un registro de imágenes.
+- `podman-compose exec` - Ejecutar un comando en un servicio definido en un archivo Compose.
+- `podman-compose run` - Ejecutar un comando en un nuevo contenedor para un servicio definido en un archivo Compose.
+
+
+## Capitulo 8 - Orquestación con OpenShift y Kubernetes
+
+### Conceptos clave:
+- Pods
+- Servicios
+- Replicasets
+- Deployments
+- StatefulSets
+- DaemonSets
+- Jobs
+- CronJobs
+- ConfigMaps
+- Secrets
+- Namespace
+- Etiquetas y selecciones
+
+### Comandos importantes de Kubernetes:
+- kubectl create
+- kubectl apply
+- kubectl get
+- kubectl describe
+- kubectl logs
+- kubectl exec
+- kubectl delete
+- kubectl scale
+- kubectl rollout
+- kubectl expose
+
+### Comandos importantes de OpenShift:
+- oc new-project
+- oc new-app
+- oc get
+- oc describe
+- oc logs
+- oc exec
+- oc delete
+- oc scale
+- oc rollout
+- oc expose
+
+### Otras herramientas importantes:
+- Helm: un gestor de paquetes para Kubernetes.
+- Istio: un servicio de malla para gestionar la comunicación entre microservicios.
+- Knative: una plataforma de serverless para Kubernetes.
