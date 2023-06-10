@@ -1,3 +1,7 @@
+### Ejercicio - 2
+
+##### Objetivo
+ - Ejecutar aplicaciones multicontenedor con Podman ( podman-compose ) - construir y ejecutar una aplicación de 3 niveles utilizando el archivo compose.
 
 1. Crea un archivo docker-compose.yml donde contenga tres contenedores. Un frontend usando el puerto 8080, un backend usando el puerto 5000 y un postgresql
 2. Crea una carpeta llamada frontend y dentro de ella coloca el código fuente de tu aplicación frontend.
