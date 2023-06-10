@@ -1,24 +1,27 @@
+### Ejercicio - 1 
 
-Ejercicio - 1 
-Objetivo
+##### Objetivo
  - Implementar imagenes usando Podman - Practica usando parametros FROM , ADD, COPY , RUN , ENV , CMD y ENTRYPOINT Instructions.
 
 Crea un contenedor de servidor web simple siguiendo los siguientes pasos:
 
 1. Crea un nuevo directorio para tu proyecto.
-2. En el nuevo directorio, crea un archivo llamado Containerfile.
+2. En el nuevo directorio, crea un archivo llamado **Containerfile**.
 3. En el Dockerfile, añade las siguientes líneas:
 
-FROM nginx:latest
+```bash 
+FROM nginx:latest 
 ENV TZ=America/Los_Angeles
 CMD ["nginx", "-g", "daemon off;"]
+```
 
-4. Construya una imagen con el siguiente nombre my-web-server
-5. Ejecute la imagen del contendor my-web-server usando el puerto 8081 del host y el puerto 80 del contenedor
+4. Construya una imagen con el siguiente nombre **my-web-server**
+5. Ejecute la imagen del contendor my-web-server usando el puerto 8081 del host y el puerto 80 del contenedor. Cree el nuevo contenedor con el nombre **mi-web**
 6. Leea el archivo index.html del contenedor my-web-server
 7. Genere un backup del archivo index.html del contenedor en el directorio del proyecto en su host
 8. Creer un archivo index.html en su host y llevelo al contenedor. El archivo index.html debe tener el siguiente texto
 
+```bash 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +59,7 @@ CMD ["nginx", "-g", "daemon off;"]
   </footer>
 </body>
 </html>
+```
 
 9. Reinicie el servicio del nginx en el contenedor my-web-server
 
