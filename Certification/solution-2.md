@@ -3,8 +3,11 @@ Respuesta a cada Punto
 1.  Ejercicio básico
 
 ```sh
+#Se ejecuta contenedor basado en la imagen "nginx" y nómbralo "webserver".
 ❯ podman run -d --name webserver -p 8080:80 nginx
 c865ecd4af96b2430bd27857c52e856eb26792feb395416bc8c57cd247618b80
+
+#Se verifica que el contenedor esté en ejecución y que el puerto se haya vinculado correctamente.
 ❯ curl -v localhost:8080/index.html
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
@@ -52,12 +55,14 @@ Commercial support is available at
 2.  Ejercicio de gestión de contenedores
 
 ```sh
+#Se crea una imagen de contenedor basado en la imagen "mysql" y nómbralo "database".
 ❯ cat > Containerfile <<EOF
 FROM mysql:latest
 ENV MYSQL_ROOT_PASSWORD='password'
 VOLUME /tmp/data
 EOF
 
+#Se construye la imagen y se ejecuta un contenedor basado en la imagen creada.
 ❯ podman build -t database .
 STEP 1/3: FROM mysql:latest
 Resolving "mysql" using unqualified-search registries (/etc/containers/registries.conf.d/999-podman-machine.conf)
@@ -85,6 +90,7 @@ COMMIT database
 Successfully tagged localhost/database:latest
 f73ee21f4868bd83362ddd64bf4f367c82612fbc6fe8c25635e5cccc3f76a7c6
 
+#Se verifica que el contenedor esté en ejecución usando comando mysql
 ❯ podman exec database mysql -u root password 'password'
 mysql  Ver 8.0.33 for Linux on x86_64 (MySQL Community Server - GPL)
 Copyright (c) 2000, 2023, Oracle and/or its affiliates.
@@ -93,14 +99,55 @@ Copyright (c) 2000, 2023, Oracle and/or its affiliates.
 3. Ejercicio de gestión de Red
 
 ```sh
+#Se crea una red llamada "lamerared" y se ejecutan dos contenedores en ella.
 ❯ podman network create lamerared
 lamerared
+
+#Se crea contenedores y se unen a la red.
 ❯ podman run -d --name frontend --network lamerared httpd
 ca732fe2447fe44380ada6da937ee9029b814f32a9f97a58b4f6aba9ef5dabdc
 ❯ podman run -d --name backend --network lamerared httpd
 84beb9ccdeb146b430a51e04f0d11426ed985e39216efb6bb06bd04d3ce898c9
+
+# Se verifica que los contenedores estén en ejecución y se verifica que estén en la red.
 ❯ podman inspect backend | grep NetworkID
                          "NetworkID": "lamerared",
 ❯ podman inspect frontend | grep NetworkID
                          "NetworkID": "lamerared",
+```
 
+4. Ejercicio de construcción de imágenes
+
+```sh
+#Se crea Containerfile con el siguiente contenido
+❯ cat > Containerfile <<EOF
+FROM alpine:latest
+COPY index.html /app
+EXPOSE 8080
+CMD ["./app"]
+EOF
+
+#Se construye la imagen y se ejecuta un contenedor basado en la imagen creada.
+❯ podman build -t my-app .
+STEP 1/4: FROM alpine:latest
+Resolved "alpine" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:31e352740f534f9ad170f75378a84fe453d6156e40700b882d737a8f4a6988a3
+Copying config sha256:c1aabb73d2339c5ebaa3681de2e9d9c18d57485045a4e311d9f8004bec208d67
+Writing manifest to image destination
+Storing signatures
+STEP 2/4: COPY index.html /app
+--> 10d2f4dff1b3
+STEP 3/4: EXPOSE 8080
+--> abae28c43a33
+STEP 4/4: CMD ["./app"]
+COMMIT my-app
+--> f96a3e2448bd
+Successfully tagged localhost/my-app:latest
+f96a3e2448bd9a5722fab9c82f88ca7f2fd2f577ea54b53444161998dae4edca
+
+#Se verifica la imagen creada
+❯ podman image ls
+REPOSITORY                TAG         IMAGE ID      CREATED         SIZE
+localhost/my-app          latest      f96a3e2448bd  17 seconds ago  7.63 MB
