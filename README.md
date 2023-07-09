@@ -62,7 +62,7 @@ Link del Proyecto: [https://github.com/iacosta/RH-DO188](https://github.com/iaco
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/iacosta/RH-DO188.svg?style=flat-square
 [contributors-url]: https://github.com/iacosta/RH-DO188/graphs/contributors
-[forks-shield]: https://img.shields.io/iacosta/RH-DO188.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/iacosta/RH-DO188.svg?style=flat-square
 [forks-url]: https://github.com/iacosta/RH-DO188/network/members
 [stars-shield]: https://img.shields.io/github/stars/iacosta/RH-DO188.svg?style=flat-square
 [stars-url]: https://github.com/iacosta/RH-DO188/stargazers
