@@ -1,6 +1,6 @@
-Respuesta a cada Punto
+### Respuesta a cada Punto
 
-1.  Ejercicio básico
+#### 1.  Ejercicio básico
 
 ```sh
 #Se ejecuta contenedor basado en la imagen "nginx" y nómbralo "webserver".
@@ -52,7 +52,7 @@ Commercial support is available at
 * Connection #0 to host localhost left intact
 ```
 
-2.  Ejercicio de gestión de contenedores
+#### 2.  Ejercicio de gestión de contenedores
 
 ```sh
 #Se crea una imagen de contenedor basado en la imagen "mysql" y nómbralo "database".
@@ -96,7 +96,7 @@ mysql  Ver 8.0.33 for Linux on x86_64 (MySQL Community Server - GPL)
 Copyright (c) 2000, 2023, Oracle and/or its affiliates.
 ```
 
-3. Ejercicio de gestión de Red
+#### 3. Ejercicio de gestión de Red
 
 ```sh
 #Se crea una red llamada "lamerared" y se ejecutan dos contenedores en ella.
@@ -116,7 +116,7 @@ ca732fe2447fe44380ada6da937ee9029b814f32a9f97a58b4f6aba9ef5dabdc
                          "NetworkID": "lamerared",
 ```
 
-4. Ejercicio de construcción de imágenes
+#### 4. Ejercicio de construcción de imágenes
 
 ```sh
 #Se crea Containerfile con el siguiente contenido
