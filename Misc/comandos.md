@@ -229,10 +229,12 @@ Hello Kubernetes!%
 ```
 
 ### Links de Interes
-[Mapa Mental](https://www.goconqr.com/es/mapamental/31944811/podman)\
-[Flash Cards - DO180](https://quizlet.com/692889577/do180-studey-set-flash-cards/)\
-[Cards de Comandos - DO180](https://quizlet.com/717521005/do180-commands-flash-cards/)\
-[Examen de Practica - DO180](https://acloudguru.com/hands-on-labs/red-hat-ex180-practice-exam)\
-[Examen de Ejemplo - DO180](https://ziyonotes.uz/ex180-sample)\
-[Repo GIT](https://github.com/kukudm/D0180)\
-[Podman In Action - PDF](https://developers.redhat.com/e-books/podman-action)
+- [Mapa Mental](https://www.goconqr.com/es/mapamental/31944811/podman)
+- [Flash Cards - DO180](https://quizlet.com/692889577/do180-studey-set-flash-cards/)
+- [Cards de Comandos - DO180](https://quizlet.com/717521005/do180-commands-flash-cards/)
+- [Examen de Practica - DO180](https://acloudguru.com/hands-on-labs/red-hat-ex180-practice-exam)
+- [Examen de Ejemplo - DO180](https://ziyonotes.uz/ex180-sample)
+- [Repo GIT](https://github.com/kukudm/D0180)
+- [Podman In Action - PDF](https://developers.redhat.com/e-books/podman-action)
+- [Repositorio GIT - EX188-Practice](https://github.com/unixerius/EX188-practice)
+- [Repositorio GIT - EX188-Notas](https://github.com/klauxx9/ex188notes)
