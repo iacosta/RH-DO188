@@ -24,7 +24,7 @@
     * [Comandos](https://github.com/iacosta/RH-DO188/blob/main/Cap2-Concep/commands.md) 
 * [Certificación](https://github.com/iacosta/RH-DO188/tree/main/Certification)
     * [Practica 1](https://github.com/iacosta/RH-DO188/blob/main/Certification/practice-1.md)
-    * [Solución 1](#https://github.com/iacosta/RH-DO188/blob/main/Certification/solution-1.md)
+    * [Solución 1](https://github.com/iacosta/RH-DO188/blob/main/Certification/solution-1.md)
     * [Practica 2](https://github.com/iacosta/RH-DO188/blob/main/Certification/practice-2.md)
     * [Solución 2](https://github.com/iacosta/RH-DO188/blob/main/Certification/solution-2.md)
 * [Hands-On](https://github.com/iacosta/RH-DO188/tree/main/HandsOn)
