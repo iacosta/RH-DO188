@@ -27,6 +27,8 @@
     * [Solución 1](https://github.com/iacosta/RH-DO188/blob/main/Certification/solution-1.md)
     * [Practica 2](https://github.com/iacosta/RH-DO188/blob/main/Certification/practice-2.md)
     * [Solución 2](https://github.com/iacosta/RH-DO188/blob/main/Certification/solution-2.md)
+    * [Practica 3](https://github.com/iacosta/RH-DO188/blob/main/Certification/practice-3.md)
+    * [Solución 3](https://github.com/iacosta/RH-DO188/blob/main/Certification/solution-3.md)
 * [Hands-On](https://github.com/iacosta/RH-DO188/tree/main/HandsOn)
     * [Laboratorio 1](https://github.com/iacosta/RH-DO188/blob/main/HandsOn/Lab-No.1.md)
     * [Laboratorio 2](https://github.com/iacosta/RH-DO188/blob/main/HandsOn/Lab-No.2.md)
