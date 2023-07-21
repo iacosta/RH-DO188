@@ -237,4 +237,4 @@ Hello Kubernetes!%
 - [Repo GIT](https://github.com/kukudm/D0180)
 - [Podman In Action - PDF](https://developers.redhat.com/e-books/podman-action)
 - [Repositorio GIT - EX188-Practice](https://github.com/unixerius/EX188-practice)
-- [Repositorio GIT - EX188-Notas](https://github.com/klauxx9/ex188notes)
+- [Repositorio GIT - EX188-Notas](https://github.com/iacosta/ex188notes)
