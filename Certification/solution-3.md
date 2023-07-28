@@ -24,7 +24,7 @@ EOF
 ```bash
 ❯ podman build -t benito-came:1.0 -f .
 
-❯ podman build --build-arg buildname=elma -t elma-marcela:1.0 -f .
+❯ podman build --build-arg USUARIO=elma -t elma-marcela:1.0 -f .
 ```
 3. Creación de los contenedores desde las imagenes creadas anteriormente
 
